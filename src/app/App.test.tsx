@@ -1,16 +1,8 @@
-import App from '@app/App';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { App } from '@app/App';
+import { render, screen } from '@testing-library/react';
 
-test('count is 0 at first', () => {
+test('App is an empty <div/> element', async () => {
   render(<App />);
 
-  expect(screen.getByText('count is: 0')).toBeDefined();
-});
-
-test('increments count', () => {
-  render(<App />);
-
-  fireEvent.click(screen.getByRole('button'));
-
-  expect(screen.getByText('count is: 1')).toBeDefined();
+  expect(await screen.findByRole('main')).toBeEmptyDOMElement();
 });
