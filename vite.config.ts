@@ -3,17 +3,31 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
-  build: {
-    sourcemap: true
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/setupTests.ts',
-    coverage: {
-      reporter: ['html', 'lcov']
-    }
+export default defineConfig(({ command }) => {
+  const baseConfig = {
+    plugins: [react(), tsconfigPaths()],
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: 'src/setupTests',
+      include: ['**/*.test.{ts,tsx}'],
+    },
+  };
+  if (command === 'serve') {
+    return {
+      ...baseConfig,
+      server: {
+        port: 3001,
+        proxy: {
+          '/api': {
+            target: 'http://localhost:3000',
+            changeOrigin: true,
+            secure: false,
+          },
+        },
+      },
+    };
+  } else {
+    return baseConfig;
   }
 });

@@ -12,6 +12,12 @@ yarn install
 yarn dev
 ```
 
+To run mocked API
+
+```sh
+yarn dev:mock-api
+```
+
 ## Build
 
 ```sh
