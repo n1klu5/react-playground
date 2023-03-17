@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
+    "start-mock-api": "node mocked-api/server.js",
     "build": "tsc && vite build",
     "build:ci": "tsc && vite build && cp 404.html dist/",
     "test": "vitest run",
@@ -32,6 +33,7 @@
     "@typescript-eslint/eslint-plugin": "5.55.0",
     "@typescript-eslint/parser": "5.55.0",
     "@vitejs/plugin-react": "3.1.0",
+    "dotenv": "16.0.3",
     "eslint": "8.36.0",
     "eslint-config-prettier": "8.7.0",
     "eslint-plugin-prettier": "4.2.1",
@@ -40,6 +42,7 @@
     "eslint-plugin-testing-library": "5.10.2",
     "husky": "8.0.3",
     "jsdom": "21.1.1",
+    "json-server": "0.17.2",
     "lint-staged": "13.2.0",
     "prettier": "2.8.4",
     "typescript": "5.0.2",
