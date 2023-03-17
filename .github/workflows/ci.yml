@@ -1,0 +1,55 @@
+name: App CI
+
+on:
+  push:
+    # Run on all branches
+    branches:
+      - "*"
+    # Run only if files modified are not docs
+    paths-ignore:
+      - "*.md"
+  pull_request:
+    # Run on all branches
+    branches:
+      - "*"
+    # Run only if files modified are not docs
+    paths-ignore:
+      - "*.md"
+
+jobs:
+
+  # Build & Test
+  buildAndTest:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "yarn"
+
+      # Install
+      - name: Install dependencies
+        run: yarn install
+
+      # Build
+      - name: BUILD
+        run: yarn build:ci
+
+      # Test
+      - name: TEST
+        run: yarn test:ci
+
+      # Upload dist artifacts
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist/
+
+      # Upload coverage artifacts
+      - uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage/lcov.info
