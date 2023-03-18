@@ -1,3 +1,4 @@
+import { Spinner } from '@app/components/shared/spinner/Spinner';
 import { ReactNode, Suspense } from 'react';
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
 
 export const Page = ({ children }: Props) => {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Spinner />}>
       <>{children}</>
     </Suspense>
   );
