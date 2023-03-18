@@ -2,6 +2,7 @@ import { App } from '@app/App';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import 'tailwindcss/tailwind.css';
 import './app/shared/i18n';
 import './index.css';
 
