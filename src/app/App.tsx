@@ -1,20 +1,14 @@
 import Layout from '@app/components/shared/layout/Layout';
 import { Page } from '@app/components/shared/page/Page';
 import { ROUTES } from '@app/shared/routes';
-import { lazy, useEffect } from 'react';
+import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { superherosRequest } from 'src/api/queryFunctions/superhero';
 
 export const Superheroes = lazy(() => import('./components/superheroes/Superheroes'));
 export const Superhero = lazy(() => import('./components/superhero/Superhero'));
 export const NotFound = lazy(() => import('./components/notFound/NotFound'));
 
 export const App = () => {
-  useEffect(() => {
-    const load = async () => await superherosRequest.getRequest();
-    load();
-  }, []);
-
   return (
     <Routes>
       <Route path={ROUTES.notFound} element={<NotFound />} />

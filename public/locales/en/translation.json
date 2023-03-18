@@ -2,6 +2,7 @@
   "common": {
     "title": "Superheroes MVP",
     "back": "Back",
+    "error": "Something went wrog, we were not able to load data.",
     "work-in-progress": "Work in progress..."
   },
   "not-found": {
@@ -10,7 +11,9 @@
     "go-home": "Go Home"
   },
   "superheroes": {
-    "title": "Superheroes"
+    "title": "Superheroes",
+    "name": "Name",
+    "position": "Position"
   },
   "superhero": {
     "title": "Superhero {{name}}"
