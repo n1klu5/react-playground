@@ -1,13 +1,16 @@
 import { ROUTES } from '@app/shared/routes';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
+  const { t } = useTranslation();
+
   return (
     <main>
-      <h1>{'Not found'}</h1>
-      <p>{"Sorry, the page you've requested could not be found."}</p>
+      <h1>{t('translation:not-found:title')}</h1>
+      <p>{t('translation:not-found:explanation-message')}</p>
       <Link to={ROUTES.superheroes}>
-        <button>GO HOME</button>
+        <button className="capitalize">{t('translation:not-found:go-home')}</button>
       </Link>
     </main>
   );

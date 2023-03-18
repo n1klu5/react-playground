@@ -46,7 +46,7 @@ const getFixtures = () => {
       });
     },
     whenUserClickGoHome: async () => {
-      const goHomeButton = await screen.findByRole('button', { name: /GO HOME/ });
+      const goHomeButton = await screen.findByRole('button', { name: /Go Home/ });
       await testingUser.click(goHomeButton);
     },
     thenNotFoundPageIsLoaded: async () => {

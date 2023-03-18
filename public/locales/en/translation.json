@@ -1,0 +1,16 @@
+{
+  "common": {
+    "work-in-progress": "Work in progress..."
+  },
+  "not-found": {
+    "title": "Not found",
+    "explanation-message": "Sorry, the page you've requested could not be found.",
+    "go-home": "Go Home"
+  },
+  "superheroes": {
+    "title": "Superheroes"
+  },
+  "superheroe": {
+    "title": "Superheroe {{name}}"
+  }
+}
