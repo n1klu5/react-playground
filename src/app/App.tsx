@@ -6,7 +6,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { superherosRequest } from 'src/api/queryFunctions/superhero';
 
 export const Superheroes = lazy(() => import('./components/superheroes/Superheroes'));
-export const Superheroe = lazy(() => import('./components/superheroe/Superheroe'));
+export const Superhero = lazy(() => import('./components/superhero/Superhero'));
 export const NotFound = lazy(() => import('./components/notFound/NotFound'));
 
 export const App = () => {
@@ -28,10 +28,10 @@ export const App = () => {
           }
         />
         <Route
-          path={ROUTES.superheroe}
+          path={ROUTES.superhero}
           element={
             <Page>
-              <Superheroe />
+              <Superhero />
             </Page>
           }
         />

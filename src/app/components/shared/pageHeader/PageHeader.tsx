@@ -15,7 +15,7 @@ interface Props {
  *
  * Example:
  * ```js
- * <PageHeader>{t('common:routes.superheroe')}</PageHeader>
+ * <PageHeader>{t('common:routes.superhero')}</PageHeader>
  * ```
  */
 export const PageHeader = ({ children }: Props) => {

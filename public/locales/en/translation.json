@@ -12,7 +12,7 @@
   "superheroes": {
     "title": "Superheroes"
   },
-  "superheroe": {
-    "title": "Superheroe {{name}}"
+  "superhero": {
+    "title": "Superhero {{name}}"
   }
 }
