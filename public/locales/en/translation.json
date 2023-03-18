@@ -1,6 +1,7 @@
 {
   "common": {
     "title": "Superheroes MVP",
+    "back": "Back",
     "work-in-progress": "Work in progress..."
   },
   "not-found": {

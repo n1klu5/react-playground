@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --topbar-height: 40px;
+    --page-header-height: 50px;
+  }
+
   body {
     min-height: 100vh;
     margin: 0;

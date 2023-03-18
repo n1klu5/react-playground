@@ -27,7 +27,6 @@ export const Icon = ({ icon, className }: Props) => {
     <div
       className={clsx(className, '[&>svg]:h-full [&>svg]:w-full')}
       aria-label={icon}
-      role="img"
       style={{
         display: 'flex',
         justifyContent: 'center',

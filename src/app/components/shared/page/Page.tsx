@@ -1,4 +1,4 @@
-import { Spinner } from '@app/components/shared/spinner/Spinner';
+import { FullHeightSpinner } from '@app/components/shared/spinner/FullHeightSpinner';
 import { ReactNode, Suspense } from 'react';
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 
 export const Page = ({ children }: Props) => {
   return (
-    <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<FullHeightSpinner />}>
       <>{children}</>
     </Suspense>
   );

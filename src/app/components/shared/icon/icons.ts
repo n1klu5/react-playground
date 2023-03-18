@@ -9,5 +9,6 @@ function lazy(importFn: () => Promise<any>) {
 }
 
 export const icons = {
+  Arrow: lazy(() => import('./icons/arrow.svg')),
   Spinner: lazy(() => import('./icons/spinner.svg')),
 };
