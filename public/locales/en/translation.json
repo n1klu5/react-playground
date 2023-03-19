@@ -3,6 +3,10 @@
     "title": "Superheroes MVP",
     "back": "Back",
     "error": "Something went wrog, we were not able to load data.",
+    "items-per-page": "Items per page: {{itemsPerPage}},",
+    "previous": "Previous",
+    "next": "Next",
+    "of-count": "of {{totalNumberOfPages}}",
     "work-in-progress": "Work in progress..."
   },
   "not-found": {
@@ -13,7 +17,13 @@
   "superheroes": {
     "title": "Superheroes",
     "name": "Name",
-    "position": "Position"
+    "id": "ID",
+    "no-results": "No results found",
+    "narrow-filters": "Please narrow down filters to find some superheroes",
+    "search": {
+      "title": "Search superhero",
+      "placeholder": "Enter a name..."
+    }
   },
   "superhero": {
     "title": "Superhero {{name}}"

@@ -1,7 +1,25 @@
-import { Superhero } from '../contracts/superhero';
+import { QueryFunctionContext } from '@tanstack/react-query';
+import { SuperHeroesResponse, TOTAL_COUNT_HEADER_NAME } from 'src/api/contracts/superhero';
 import { getRequest } from '../http';
 
-export const superherosRequest = {
-  queryKeys: ['superheros'],
-  getRequest: () => getRequest<Superhero[], undefined>('heroes'),
-};
+export const ROWS_PER_PAGE = 20;
+
+export interface QueryParams {
+  _page: number;
+  _limit: number;
+  name?: string;
+  [key: string]: string | number | undefined;
+}
+
+export const superherosRequest = ({
+  queryKey: [, page, name],
+}: QueryFunctionContext<Readonly<[string, number | undefined, string | undefined]>>) =>
+  getRequest<SuperHeroesResponse, QueryParams>(
+    'heroes',
+    {
+      _page: page ?? 1,
+      _limit: ROWS_PER_PAGE,
+      name,
+    },
+    TOTAL_COUNT_HEADER_NAME
+  );

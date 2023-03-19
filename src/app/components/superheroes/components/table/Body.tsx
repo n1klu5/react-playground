@@ -12,7 +12,7 @@ export const Body = ({ superheroes }: Props) => {
   return (
     <>
       {superheroes.length ? (
-        superheroes.map((superhero, index) => <Row key={superhero.id} index={index + 1} superhero={superhero} />)
+        superheroes.map((superhero) => <Row key={superhero.id} superhero={superhero} />)
       ) : (
         <tr>
           <td colSpan={NUMBER_OF_COLUMNS}>

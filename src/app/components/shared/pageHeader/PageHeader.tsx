@@ -24,7 +24,7 @@ export const PageHeader = ({ children }: Props) => {
   const isMainPathname = pathname === ROUTES.superheroes;
 
   return (
-    <header className="flex h-[var(--page-header-height)] w-full items-center px-2">
+    <header className="flex h-[var(--page-header-height)] w-full items-center">
       <div className="flex w-full items-center gap-4">
         {isMainPathname ? null : (
           <Link to={ROUTES.superheroes}>

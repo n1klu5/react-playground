@@ -54,3 +54,9 @@ export interface Superhero {
   connections: Connections;
   images: Images;
 }
+
+export const TOTAL_COUNT_HEADER_NAME = 'x-total-count';
+export interface SuperHeroesResponse {
+  data: Superhero[];
+  [TOTAL_COUNT_HEADER_NAME]: number;
+}

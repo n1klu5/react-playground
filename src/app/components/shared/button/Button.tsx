@@ -1,11 +1,17 @@
 import { ClassValue, clsx } from 'clsx';
 
 interface Props {
-  /** Text */
-  children?: React.ReactNode;
-
   /** Additional class names */
   className?: string | ClassValue;
+
+  /** Handler for button click event */
+  onClick?: VoidFunction;
+
+  /** Is button diabled? */
+  disabled?: boolean;
+
+  /** Text */
+  children?: React.ReactNode;
 }
 /**
  * Button component
@@ -15,11 +21,15 @@ interface Props {
  * <Button className="text-black" loading disabled>Click Me</Typography>
  * ```
  */
-export const Button = ({ children, className }: Props) => {
+export const Button = ({ className, disabled, onClick, children }: Props) => {
   return (
     <button
+      onClick={onClick}
+      disabled={disabled}
       className={clsx(
-        'rounded bg-pink-700 p-2 text-white hover:ring-2 hover:ring-pink-500 active:bg-pink-300',
+        'cursor-pointer rounded bg-pink-700 p-2 text-white',
+        'hover:ring-2 hover:ring-pink-500 active:bg-pink-300',
+        'disabled:cursor-not-allowed disabled:bg-pink-200 disabled:ring-2 disabled:ring-pink-300',
         className
       )}
     >
