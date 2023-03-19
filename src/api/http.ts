@@ -51,7 +51,7 @@ export const getRequest = async <
   const urlWithQuery = new URL(`${BASE_API_URL}${url}`);
   if (queryParams) {
     Object.entries(queryParams).forEach(([key, value]) => {
-      if (value === undefined) {
+      if (!value && value !== null) {
         return;
       }
 

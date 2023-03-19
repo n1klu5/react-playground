@@ -6,7 +6,7 @@ import { ROWS_PER_PAGE, superheroesRequest } from 'src/api/queryFunctions/superh
 
 export const useSuperheroes = () => {
   const [currentPageNumber, setCurrentPageNumber] = useState<number | undefined>(1);
-  const [name, setName] = useState<string | undefined>(undefined);
+  const [name, setName] = useState<string>('');
   const { data, isLoading, isError } = useQuery<SuperHeroesResponse>(
     ['heroes', currentPageNumber, name],
     superheroesRequest as () => Promise<SuperHeroesResponse>,
@@ -19,7 +19,7 @@ export const useSuperheroes = () => {
 
   const handleSetName = debounce((name: string | undefined) => {
     setCurrentPageNumber(1);
-    setName(name?.length ? name : undefined);
+    setName(name?.length ? name : '');
   }, 500);
 
   const totalNumberOfPages = Math.ceil((data?.[TOTAL_COUNT_HEADER_NAME] ?? 0) / ROWS_PER_PAGE);

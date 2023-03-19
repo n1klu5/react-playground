@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactNode } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-export const queryClient = new QueryClient({
+export const testsQueryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
@@ -20,7 +20,7 @@ export const AllProvidersWrapper = ({
 }) => {
   return (
     <MemoryRouter initialEntries={initialRouterEntries}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={testsQueryClient}>{children}</QueryClientProvider>
     </MemoryRouter>
   );
 };

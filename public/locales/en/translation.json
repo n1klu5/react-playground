@@ -2,7 +2,7 @@
   "common": {
     "title": "Superheroes MVP",
     "back": "Back",
-    "error": "Something went wrog, we were not able to load data.",
+    "error": "Something went wrong, we were not able to load data.",
     "items-per-page": "Items per page: {{itemsPerPage}},",
     "previous": "Previous",
     "next": "Next",

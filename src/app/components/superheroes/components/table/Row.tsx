@@ -1,5 +1,5 @@
 import { ROUTES } from '@app/shared/routes';
-import { generatePath, useNavigate } from 'react-router';
+import { generatePath, useNavigate } from 'react-router-dom';
 import { Superhero } from 'src/api/contracts/superhero';
 
 export const NUMBER_OF_COLUMNS = 3;
@@ -19,7 +19,7 @@ export const Row = ({ superhero }: Props) => {
       <td className="text-center">{superhero.id}</td>
       <td className="whitespace-nowrap text-left">{superhero.name}</td>
       <td>
-        <img src={superhero.images.xs} alt={superhero.name} width="50" height="50" />
+        <img src={superhero.images.xs} alt={`${superhero.name}-image`} width="50" height="50" />
       </td>
     </tr>
   );

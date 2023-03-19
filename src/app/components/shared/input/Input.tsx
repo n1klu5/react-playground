@@ -21,6 +21,7 @@ export const Input = ({ id, type, className, min, max, value, placeholder, onCha
   return (
     <input
       id={id}
+      role="input"
       className={clsx('rounded border border-pink-800 p-2 outline-pink-300', className)}
       type={type}
       min={min}
