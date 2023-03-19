@@ -27,6 +27,35 @@
     }
   },
   "superhero": {
-    "title": "Superhero {{name}}"
+    "title": "Superhero {{name}}",
+    "name": "Name",
+    "intelligence": "Intelligence",
+    "strength": "Strength",
+    "speed": "Speed",
+    "durability": "Durability",
+    "power": "Power",
+    "combat": "Combat",
+    "powerstats": "Powerstats",
+    "biography": "Biography",
+    "fullName": "Full name",
+    "alterEgos": "Alter egos",
+    "aliases": "Aliases",
+    "placeOfBirth": "Place of birth",
+    "firstAppearance": "First appearance",
+    "publisher": "publisher",
+    "alignment": "alignment",
+    "appearance": "Appearance",
+    "gender": "gender",
+    "race":  "race",
+    "height": "height",
+    "weight": "weight",
+    "eyeColor": "Eye color",
+    "hairColor": "Hair color",
+    "work": "Work",
+    "occupation": "Occupation",
+    "base": "Base",
+    "connections": "Connections",
+    "groupAffiliation": "Group affiliation",
+    "relatives": "Relatives"
   }
 }

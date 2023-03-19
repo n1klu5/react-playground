@@ -10,12 +10,15 @@ interface Props {
 export const RandomSuperheroes = ({ totalCount }: Props) => {
   const { t } = useTranslation();
   const { isError, isLoading, randomSuperheroes } = useRandomSuperheros(totalCount);
+
   if (isLoading) {
     return <Spinner />;
   }
+
   if (isError) {
     return <Error>{t('translation:common.error')}</Error>;
   }
+
   return (
     <div className="flex flex-col items-center gap-2">
       <h3 className="text-xl text-pink-700">{t('translation:superheroes.random')}</h3>

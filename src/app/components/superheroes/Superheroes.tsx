@@ -22,7 +22,7 @@ const Superheroes = () => {
   } = useSuperheroes();
 
   return (
-    <div className="mb-4 flex flex-col p-4 text-pink-700">
+    <div className="mb-4 flex flex-col p-4">
       <PageHeader>
         <h2 className="text-2xl uppercase text-pink-700">{t('translation:superheroes.title')}</h2>
       </PageHeader>
