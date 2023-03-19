@@ -1,5 +1,5 @@
 import { QueryFunctionContext } from '@tanstack/react-query';
-import { SuperHeroesResponse, TOTAL_COUNT_HEADER_NAME } from 'src/api/contracts/superhero';
+import { Superhero, SuperHeroesResponse, TOTAL_COUNT_HEADER_NAME } from 'src/api/contracts/superhero';
 import { getRequest } from '../http';
 
 export const ROWS_PER_PAGE = 20;
@@ -11,7 +11,7 @@ export interface QueryParams {
   [key: string]: string | number | undefined;
 }
 
-export const superherosRequest = ({
+export const superheroesRequest = ({
   queryKey: [, page, name],
 }: QueryFunctionContext<Readonly<[string, number | undefined, string | undefined]>>) =>
   getRequest<SuperHeroesResponse, QueryParams>(
@@ -23,3 +23,8 @@ export const superherosRequest = ({
     },
     TOTAL_COUNT_HEADER_NAME
   );
+
+export const superheroRequest = ({ id }: { id: number[] }) =>
+  getRequest<Superhero[], { id: number[] }>('heroes', {
+    id,
+  });

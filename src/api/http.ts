@@ -21,7 +21,10 @@ const request = async <TBody, TReturn>(
     throw new Error('Network response was not ok');
   }
 
-  const headerValue = response.headers.get(headerName ?? '');
+  let headerValue;
+  if (headerName) {
+    headerValue = response.headers.get(headerName ?? '');
+  }
 
   const body = await response.text();
   try {
@@ -48,9 +51,16 @@ export const getRequest = async <
   const urlWithQuery = new URL(`${BASE_API_URL}${url}`);
   if (queryParams) {
     Object.entries(queryParams).forEach(([key, value]) => {
-      if (value !== undefined) {
-        urlWithQuery.searchParams.set(key, encodeURIComponent(value.toString()));
+      if (value === undefined) {
+        return;
       }
+
+      if (Array.isArray(value)) {
+        value.forEach((item) => urlWithQuery.searchParams.append(key, encodeURIComponent(item.toString())));
+        return;
+      }
+
+      urlWithQuery.searchParams.set(key, encodeURIComponent(value.toString()));
     });
   }
   return await request('GET', urlWithQuery.toString(), undefined, headerName);

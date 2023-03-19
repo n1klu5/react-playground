@@ -16,6 +16,7 @@
   },
   "superheroes": {
     "title": "Superheroes",
+    "random": "Some of our Superheroes",
     "name": "Name",
     "id": "ID",
     "no-results": "No results found",
