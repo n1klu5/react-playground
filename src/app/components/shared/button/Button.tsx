@@ -10,9 +10,10 @@ interface Props {
   /** Is button diabled? */
   disabled?: boolean;
 
-  /** Text */
+  /** Text or other children which will be displayed as content of button*/
   children?: React.ReactNode;
 }
+
 /**
  * Button component
  *

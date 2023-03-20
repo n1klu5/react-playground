@@ -6,6 +6,12 @@
 yarn install
 ```
 
+## Prepare (init git hooks)
+
+```sh
+yarn prepare
+```
+
 ## Dev
 
 ```sh

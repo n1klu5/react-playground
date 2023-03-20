@@ -1,6 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { Outlet } from 'react-router-dom';
 
+/**
+ * Layout component - main layout component for the application
+ *
+ * Example:
+ * ```js
+ * <Layout />
+ * ```
+ */
 const Layout = () => {
   const { t } = useTranslation();
 
