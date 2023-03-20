@@ -1,6 +1,6 @@
 import { generateRandomIds } from '@app/components/superheroes/components/randomSuperheroes/generateRandomIds';
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Superhero } from 'src/api/contracts/superhero';
 import { superheroRequest } from 'src/api/queryFunctions/superhero';
 
@@ -17,6 +17,10 @@ export const useRandomSuperheros = (total: number) => {
       },
     }
   );
+
+  useEffect(() => {
+    setRandomIds(generateRandomIds(total));
+  }, [total]);
 
   return { randomSuperheroes: data ?? [], isError, isLoading };
 };

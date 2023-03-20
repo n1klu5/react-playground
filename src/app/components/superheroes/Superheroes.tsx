@@ -30,7 +30,7 @@ const Superheroes = () => {
         <Error>{t('translation:common.error')}</Error>
       ) : (
         <div className="flex h-[calc(100vh_-_var(--topbar-height)-_var(--page-header-height)-4rem)] w-full flex-col items-center gap-4 overflow-hidden">
-          {<RandomSuperheroes totalCount={totalCount} />}
+          <RandomSuperheroes totalCount={totalCount} />
           <Search searchName={name} onChangeSearch={setName} />
           <div className="scrollbar flex h-full w-full border-b border-pink-800 scrollbar-track-mt-[2.5rem] md:w-6/12">
             <Table superheroes={superheroes} isLoading={isLoading} />
