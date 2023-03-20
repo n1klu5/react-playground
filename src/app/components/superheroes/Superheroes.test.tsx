@@ -72,7 +72,7 @@ describe('<Superheroes/>', () => {
     fixtures.thenRequestWithNextPageIsSent(request);
   });
 
-  it('shows error message if reques returns error', async () => {
+  it('shows error message if API request returns error', async () => {
     fixtures.givenAPIReturnsError();
     fixtures.givenComponentIsRendered();
     await fixtures.thenErrorMessageisShown();
@@ -82,7 +82,7 @@ describe('<Superheroes/>', () => {
     fixtures.givenComponentIsRendered();
     await fixtures.thenTableIsRendered();
     await fixtures.whenUserSelectsRow();
-    await fixtures.thenUserIsNavigatedToDetailsPage();
+    fixtures.thenUserIsNavigatedToDetailsPage();
   });
 });
 
