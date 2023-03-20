@@ -45,6 +45,7 @@ export const Pagination = ({ currentPageNumber, totalNumberOfPages, onChange }: 
         </Button>
         <Input
           type="number"
+          disabled={previousPageDisabled && nextPageDisabled}
           min="1"
           max={totalNumberOfPages}
           value={currentPageNumber ?? 0 + 1}

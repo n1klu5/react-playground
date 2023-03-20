@@ -4,7 +4,7 @@ import { InputHTMLAttributes } from 'react';
 interface Props
   extends Pick<
     InputHTMLAttributes<HTMLInputElement>,
-    'type' | 'onChange' | 'min' | 'max' | 'value' | 'id' | 'placeholder'
+    'type' | 'onChange' | 'min' | 'max' | 'value' | 'id' | 'placeholder' | 'disabled'
   > {
   /** Additional class names */
   className?: string | ClassValue;
@@ -17,7 +17,7 @@ interface Props
  * <Button className="text-black" loading disabled>Click Me</Typography>
  * ```
  */
-export const Input = ({ id, type, className, min, max, value, placeholder, onChange }: Props) => {
+export const Input = ({ id, type, className, min, max, value, placeholder, disabled, onChange }: Props) => {
   return (
     <input
       id={id}
@@ -28,6 +28,7 @@ export const Input = ({ id, type, className, min, max, value, placeholder, onCha
       max={max}
       value={value}
       placeholder={placeholder}
+      disabled={disabled}
       onChange={onChange}
     />
   );

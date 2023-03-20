@@ -8,6 +8,7 @@ import { AllProvidersWrapper } from 'src/tests/AllProvidersWrapper';
 import { createSuperhero } from 'src/tests/fixtures/superhero';
 import { superheroErrorHandler, superheroHandler } from 'src/tests/serverMocks/heroes';
 import { setupMockServer } from 'src/tests/setupMockServer';
+import { PAGINATION_ELEMENT_QUERIES } from './components/table/pagination/testHelpers';
 import Superheroes from './Superheroes';
 
 // Mocking ROWS_PER_PAGE value so there is no need to create more then 20 mocked superheroes
@@ -49,7 +50,7 @@ describe('<Superheroes/>', () => {
     fixtures = getFixtures();
   });
 
-  it('searches for heroes filtered by name', async () => {
+  it('search for heroes filtered by name', async () => {
     fixtures.givenComponentIsRendered();
     await fixtures.thenTableIsRendered();
     await fixtures.whenUserEntersSearchName();
@@ -57,7 +58,7 @@ describe('<Superheroes/>', () => {
     fixtures.thenRequestWithSearchPhraseIsSent(await request);
   });
 
-  it('changes the page of visible heroes', async () => {
+  it('change the page of visible heroes', async () => {
     fixtures.givenComponentIsRendered();
     await fixtures.thenTableIsRendered();
     const request = await fixtures.whenUserChangesPage();
@@ -65,20 +66,20 @@ describe('<Superheroes/>', () => {
     fixtures.thenRequestWithNewPageIsSent(request);
   });
 
-  it('goes to next page of visible heroes', async () => {
+  it('go to next page of visible heroes', async () => {
     fixtures.givenComponentIsRendered();
     await fixtures.thenTableIsRendered();
     const request = await fixtures.whenUserGoesToNextPage();
     fixtures.thenRequestWithNextPageIsSent(request);
   });
 
-  it('shows error message if API request returns error', async () => {
+  it('show error message if API request returns error', async () => {
     fixtures.givenAPIReturnsError();
     fixtures.givenComponentIsRendered();
     await fixtures.thenErrorMessageisShown();
   });
 
-  it('navigates to details page on row click', async () => {
+  it('navigat to details page on row click', async () => {
     fixtures.givenComponentIsRendered();
     await fixtures.thenTableIsRendered();
     await fixtures.whenUserSelectsRow();
@@ -111,7 +112,7 @@ const getFixtures = () => {
     },
     whenUserGoesToNextPage: async () => {
       const request = waitForRequest('GET', '*/api/heroes');
-      const buttonNext = await screen.findByRole('button', { name: 'Next' });
+      const buttonNext = await PAGINATION_ELEMENT_QUERIES.findNextButton();
       await testingUser.click(buttonNext);
       return request;
     },

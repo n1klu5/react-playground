@@ -2,7 +2,7 @@ import { Error } from '@app/components/shared/error/Error';
 import { PageHeader } from '@app/components/shared/pageHeader/PageHeader';
 import { RandomSuperheroes } from '@app/components/superheroes/components/randomSuperheroes/RandomSuperheroes';
 import { Search } from '@app/components/superheroes/components/Search';
-import { Pagination } from '@app/components/superheroes/components/table/Pagination';
+import { Pagination } from '@app/components/superheroes/components/table/pagination/Pagination';
 import { Table } from '@app/components/superheroes/components/table/Table';
 import { useSuperheroes } from '@app/components/superheroes/useSuperheroes';
 import { useTranslation } from 'react-i18next';

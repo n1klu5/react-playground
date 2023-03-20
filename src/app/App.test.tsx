@@ -26,7 +26,7 @@ describe('<App />', () => {
     fixtures = getFixtures();
   });
 
-  it('allows to navigate to main superheroes page when user entered unknown route', async () => {
+  it('navigate to main superheroes page when user entered unknown route', async () => {
     fixtures.givenComponentIsRendered();
     fixtures.thenNotFoundPageIsLoaded();
     await fixtures.whenUserClickGoHome();

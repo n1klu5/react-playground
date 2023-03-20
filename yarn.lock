@@ -1311,7 +1311,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash.debounce@npm:^4.0.7":
+"@types/lodash.debounce@npm:4.0.7":
   version: 4.0.7
   resolution: "@types/lodash.debounce@npm:4.0.7"
   dependencies:
@@ -5598,7 +5598,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.debounce@npm:^4.0.8":
+"lodash.debounce@npm:4.0.8":
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
   checksum: a3f527d22c548f43ae31c861ada88b2637eb48ac6aa3eb56e82d44917971b8aa96fbb37aa60efea674dc4ee8c42074f90f7b1f772e9db375435f6c83a19b3bc6
@@ -6770,7 +6770,7 @@ __metadata:
     "@testing-library/jest-dom": 5.16.5
     "@testing-library/react": 14.0.0
     "@testing-library/user-event": 14.4.3
-    "@types/lodash.debounce": ^4.0.7
+    "@types/lodash.debounce": 4.0.7
     "@types/node": 18.15.3
     "@types/react": 18.0.28
     "@types/react-dom": 18.0.11
@@ -6796,7 +6796,7 @@ __metadata:
     jsdom: 21.1.1
     json-server: 0.17.2
     lint-staged: 13.2.0
-    lodash.debounce: ^4.0.8
+    lodash.debounce: 4.0.8
     msw: 1.1.0
     postcss: 8.4.21
     prettier: 2.8.4
